@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'; 
-import css from 'components/FriendListItem/FriendListItem.module.css';
+import { MyFriend, Status, Avatar,Name } from 'components/FriendListItem/FriendListItem.styled';
 
 export const FriendListItem = ({
   isOnline,
@@ -7,24 +7,13 @@ export const FriendListItem = ({
   name,
 }) => {
   return (
-    <li className={css.item}>
-      
-      {isOnline 
-        ? <span className={css.status}
-          style={{
-            backgroundColor: "green"
-          }}
-          ></span>
-        : <span className={css.status}
-          style={{
-            backgroundColor: "red"
-          }}
-          ></span>
-      }
-      
-      <img className={css.avatar} src={avatar} alt="User avatar" width="48" />
-      <p className={css.name}>{name}</p>
-    </li>
+    <MyFriend>
+      <Status
+        style={{ backgroundColor: isOnline ? "green" : "red" }}
+      ></Status>
+      <Avatar src={avatar} alt="User avatar" width="48" />
+      <Name>{name}</Name>
+    </MyFriend>
   )
 };
 

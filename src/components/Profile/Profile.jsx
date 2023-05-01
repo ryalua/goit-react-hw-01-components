@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'; 
-import css from 'components/Profile/Profile.module.css';
+import { ProfileCard, Description, Avatar, Name, Nav, Stats, Item, Label, Quantity } from 'components/Profile/Profile.styled';
 
 export const Profile = ({
   username,
@@ -9,33 +9,32 @@ export const Profile = ({
   stats: {followers, views, likes},
 }) => {
   return (
-    <div className={css.profile}>
-      <div className={css.description}>
-        <img
+    <ProfileCard>
+      <Description>
+        <Avatar
           src={avatar}
           alt="User avatar"
-          className={css.avatar}
         />
-        <p className={css.name}>{username}</p>
-        <p className={css.tag}>{tag}</p>
-        <p className={css.location}>{location}</p>
-      </div>
+        <Name>{username}</Name>
+        <Nav>{tag}</Nav>
+        <Nav>{location}</Nav>
+      </Description>
 
-      <ul className={css.stats}>
-        <li>
-          <span className={css.label}>Followers</span>
-          <span className={css.quantity}>{followers}</span>
-        </li>
-        <li>
-          <span className={css.label}>Views</span>
-          <span className={css.quantity}>{views}</span>
-        </li>
-        <li>
-          <span className={css.label}>Likes</span>
-          <span className={css.quantity}>{likes}</span>
-        </li>
-      </ul>
-    </div>
+      <Stats>
+        <Item>
+          <Label>Followers</Label>
+          <Quantity>{followers}</Quantity>
+        </Item>
+        <Item>
+          <Label>Views</Label>
+          <Quantity>{views}</Quantity>
+        </Item>
+        <Item>
+          <Label>Likes</Label>
+          <Quantity>{likes}</Quantity>
+        </Item>
+      </Stats>
+    </ProfileCard>
   );
 };
 
@@ -45,6 +44,10 @@ Profile.propTypes = {
   tag: PropTypes.string,
   location: PropTypes.string,
   avatar: PropTypes.string,
-  stats: PropTypes.object,
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }),
   
 };

@@ -1,6 +1,6 @@
-.transactionHistory {
-  
+import styled from '@emotion/styled';
 
+export const Table = styled.table`
   margin-top: 80px;
   border-radius: 4px;
   background-color: rgb(255 255 255);
@@ -9,22 +9,21 @@
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-}
+`;
 
-thead {
+export const Head = styled.thead`
   background-color: #55bdd5;
   color: white;
   text-transform:uppercase;
-}
+`;
 
-th {
+export const BodyRow = styled.tr`
+  &:nth-of-type(2n) {
+    background: #ecf1f3;
+   }
+`;
+
+export const Cell = styled.th`
   padding: 10px;
-}
+`;
 
-td {
-  padding: 10px;
-}
-
-tbody tr:nth-child(2n) {
-  background: #ecf1f3;
-}

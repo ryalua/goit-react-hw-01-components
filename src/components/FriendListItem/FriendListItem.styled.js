@@ -1,4 +1,6 @@
-.item {
+import styled from '@emotion/styled';
+
+export const MyFriend = styled.li`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -11,21 +13,18 @@
   width: 300px;
   margin-left: auto;
   margin-right: auto;
-  
-}
-
-.status {
+`;
+export const Status = styled.span`
   margin-left: 15px;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  
-}
+`;
 
-.avatar {
+export const Avatar = styled.img`
   width: 100px;
-}
+`;
 
-.name {
+export const Name = styled.p`
   font-size: 25px;
-}
+`;

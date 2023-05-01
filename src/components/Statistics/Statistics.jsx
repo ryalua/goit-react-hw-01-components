@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'; 
-import css from 'components/Statistics/Statistics.module.css';
+import { StatPage, Title, StatList, Item, Label,Percentage } from 'components/Statistics/Statistics.styled';
 
 export const Statistics = ({  
   title, 
@@ -7,21 +7,21 @@ export const Statistics = ({
 }) => {
 
   return (
-    <section className={css.statistics}>
-      <h2 className={css.title}>{title}</h2>
+    <StatPage>
+      <Title>{title}</Title>
 
-      <ul className={css.statList}>
+      <StatList>
         {stats.map(stat => (
-          <li className={css.item}
+          <Item
             key={stat.id}
             style={{ backgroundColor: randomColor() }}
           >
-            <span className={css.label}>{stat.label}</span>
-            <span className={css.percentage}>{stat.percentage}%</span>
-          </li>
+            <Label>{stat.label}</Label>
+            <Percentage>{stat.percentage}%</Percentage>
+          </Item>
         ))}
-      </ul>
-    </section>
+      </StatList>
+    </StatPage>
   );
   
 };
@@ -29,8 +29,13 @@ export const Statistics = ({
 Statistics.propTypes = {
 
   title: PropTypes.string,
-  stats: PropTypes.array.isRequired,
-  
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };
 
 function randomColor() {
