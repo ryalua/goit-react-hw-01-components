@@ -1,8 +1,13 @@
 import { Profile } from "./Profile/Profile";
-import user from 'components/user.json';
 import { Statistics } from "./Statistics/Statistics";
-// import data from 'components/data.json';
-import data from '../components/data.json';
+import { FriendList } from "./FriendList/FriendList";
+
+import user from 'components/user.json';
+import data from 'components/data.json';
+import friends from 'components/friends.json';
+
+
+console.log(friends)
 
 export const App = () => {
   return (
@@ -12,16 +17,14 @@ export const App = () => {
         tag={user.tag}
         location={user.location}
         avatar={user.avatar}
-        // stats={user.stats}
-        followers={user.stats.followers}
-        views={user.stats.views}
-        likes={user.stats.likes}
+        stats={user.stats}
       />
       <Statistics
-        title={data.title}
-        label={data.label}
-        // label={[1, 2, 3, 4, 5]}
-        percentage={data.percentage}
+        title="Upload stats"
+        stats={data}
+      />
+      <FriendList
+        friends={friends}
       />
     </div>
   );
