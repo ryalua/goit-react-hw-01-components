@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'; 
-import css from 'components/Statistics/Statistics.module.css';
+import css from 'components/TransactionHistory/TransactionHistory.module.css';
 
 export const TransactionHistory = ({ items }) => {
   return (
@@ -13,16 +13,13 @@ export const TransactionHistory = ({ items }) => {
       </thead>
 
       <tbody>
-        <tr>
-          <td>Invoice</td>
-          <td>125</td>
-          <td>USD</td>
-        </tr>
-        <tr>
-          <td>Withdrawal</td>
-          <td>85</td>
-          <td>USD</td>
-        </tr>
+        {items.map(item => (
+          <tr key={item.id}>
+            <td>{item.type}</td>
+            <td>{item.amount}</td>
+            <td>{item.currency}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   )

@@ -14,42 +14,34 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  width: 300px;
+  width: auto;
   height: 100px;
 }
 
 .statList {
   display: flex;
-  justify-content: space-around;
   list-style: none;
-  gap: 1px;
-  background-color: rgb(228, 226, 226);
 }
 
 .item {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  
-  gap: 1px;
-  background-color: rgb(228, 226, 226);
+  align-items: center;
+  width: 20%;
+  gap: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
 }
 
 .label {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* width: 100px; */
-  height: 40px;
-  background-color: rgb(228, 226, 226);
   font-size: 15px;
+  text-align: center;
+  /* color: white; */
 }
 
 .percentage {
-  display: flex;
-  justify-content: center;
-  /* width: 100px; */
-  height: 40px;
-  background-color: rgb(228, 226, 226);
   font-size: 20px;
+  text-align: center;
+  color: white;
 }

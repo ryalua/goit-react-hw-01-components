@@ -8,7 +8,20 @@ export const FriendListItem = ({
 }) => {
   return (
     <li className={css.item}>
-      <span className={css.status}></span>
+      
+      {isOnline 
+        ? <span className={css.status}
+          style={{
+            backgroundColor: "green"
+          }}
+          ></span>
+        : <span className={css.status}
+          style={{
+            backgroundColor: "red"
+          }}
+          ></span>
+      }
+      
       <img className={css.avatar} src={avatar} alt="User avatar" width="48" />
       <p className={css.name}>{name}</p>
     </li>
