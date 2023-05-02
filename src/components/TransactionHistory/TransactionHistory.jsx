@@ -5,14 +5,14 @@ export const TransactionHistory = ({ items }) => {
   return (
     <Table>
       <Head>
-        <>
+        <tr>
           <Cell>Type</Cell>
           <Cell>Amount</Cell>
           <Cell>Currency</Cell>
-        </>
+        </tr>
       </Head>
 
-      <>
+      <tbody></tbody>
         {items.map(item => (
           <BodyRow key={item.id}>
             <Cell>{item.type}</Cell>
@@ -20,7 +20,7 @@ export const TransactionHistory = ({ items }) => {
             <Cell>{item.currency}</Cell>
           </BodyRow>
         ))}
-      </>
+      </tbody>
     </Table>
   )
 };
