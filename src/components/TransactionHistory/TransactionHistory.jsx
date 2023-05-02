@@ -12,7 +12,7 @@ export const TransactionHistory = ({ items }) => {
         </tr>
       </Head>
 
-      <tbody></tbody>
+      <tbody>
         {items.map(item => (
           <BodyRow key={item.id}>
             <Cell>{item.type}</Cell>
